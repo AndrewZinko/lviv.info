@@ -1,0 +1,40 @@
+{% extends 'news/layer.html' %}
+
+{% block title %}{{ article.article_title }}{% endblock %}
+
+{% block bodycontent %}
+
+    <style>
+        .article-banner{
+            width: 100%;
+            height: 60vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url({{ article.article_img }});
+        }
+
+    </style>
+
+    <div class="article-banner">
+        <div class="overlay-banner"></div>
+        <div class="banner-content">
+            <h2>{{ article.article_title }}</h2>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <p class="publication-date">Опубліковано: {{ article.article_publication }}</p>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <p class="article-content">{{ article.article_content }}</p>
+    </div>
+{% endblock %}

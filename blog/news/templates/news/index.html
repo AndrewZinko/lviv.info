@@ -1,0 +1,68 @@
+{% extends 'news/layer.html' %}
+
+{% block title %}Основне{% endblock %}
+
+{% block bodycontent %}
+    <div class="row">
+        <h3 class="main-header">Головні новини сьогодні</h3>
+        <div class="col-lg-8 col-sm-12">
+
+            {% for elem in news %}
+            <div class="box news-box flex-direction-row">
+                <div class="row">
+                    <div class="news-image col-md-4">
+                        <img src="{{ elem.image_url }}" alt="News Photo 1">
+                    </div>
+                    <div class="news-content col-md-8">
+                        <h5 class="news-header">{{ elem.title }}</h5>
+                        <hr>
+                        <p class="news-text">
+                            {{ elem.announce }}
+                        </p>
+                        <div class="news-link-container">
+                            <a class="news-link" href="{{ elem.news_url }}">Читати далі</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="col-lg-4">
+            <div class="box weather">
+
+                <h4>Погода сьогодні</h4>
+
+                <!-- Weather widget -->
+                <a class="weatherwidget-io" href="https://forecast7.com/uk/49d8424d03/lviv/" data-label_1="LVIV" data-label_2="WEATHER" data-theme="original" >LVIV WEATHER</a>
+                <!-- /Weather widget -->
+
+                <hr>
+
+                <!-- Clocks animation -->
+                <div class="center" id="clock">
+                    <div class="clock">
+                        <div class="hours-container">
+                            <div class="hours"></div>
+                        </div>
+
+                        <div class="minutes-container">
+                            <div class="minutes"></div>
+                        </div>
+
+                        <div class="seconds-container">
+                            <div class="seconds"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Clocks animation -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Weather widget script-->
+    <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
+{% endblock %}

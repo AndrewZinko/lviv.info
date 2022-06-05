@@ -1,0 +1,98 @@
+{% extends 'news/layer.html' %}
+
+{% block title %}Про автора{% endblock %}
+
+{% block bodycontent %}
+    {% load static %}
+        <!-- CV section -->
+        <section class="summary" id="summary">
+            <h3 class="main-header">Коротке саммарі автора</h3>
+            <div class="row">
+
+                <!-- About me section-->
+                <div class="col-md-6">
+                    <div class="box">
+                        <div class="avatar-image">
+                            <img src="{% static 'news/img/avatar.jpg' %}" alt="Avatar">
+                        </div>
+                        <h4 class="avatar-header">Андрій Зінько, Front-End Developer</h4>
+                        <div class="description">
+                            <p class="avatar-text">
+                                Ви знаходитеся на сторінці починаючого веб-дизайнера Андрія Зінька, студента національного університету "Львівська Політехніка".<br><br>
+                                Я завжди мріяв пов'язати власне життя з сферою веб-технологій, оскільки мені надзвичайно подобається створювати щось нове.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /About me section-->
+
+                <!-- Skills and abilities section-->
+                <div class="col-md-6">
+                    <div class="box">
+
+                        <h4 class="avatar-header">Навички</h4>
+
+                        <div class="avatar-padding">
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">HTML</div>
+                            </div>
+
+                            <br>
+
+                            <div class="progress">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">CSS</div>
+                            </div>
+
+                            <br>
+
+                            <div class="progress">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">JS</div>
+                            </div>
+
+                            <br>
+
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">Bootstrap</div>
+                            </div>
+
+                            <br>
+
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">React JS</div>
+                            </div>
+
+
+                            <br>
+
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">Figma</div>
+                            </div>
+
+                            <p class="skills-text">
+                                Незважаючи на результати та досягнення, завжди важливо рухатися далі, повільно рухаючись до свого ефемерного ідеалу, дізнаючись та вивчаючи щось нове.
+                            </p>
+                        </div>
+
+                        <h4 class="avatar-header">Персональні риси</h4>
+
+                        <div class="lists-avatar">
+                            <ul>
+                                <li>Стресостійкість</li>
+                                <li>Винахідливість</li>
+                                <li>Старанність</li>
+                            </ul>
+                            <ul class="second-avatar-list">
+                                <li>Креативність</li>
+                                <li>Хороші комунікативні навички</li>
+                                <li>Любов до своєї справи</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /Skills and abilities section-->
+
+            </div>
+        </section>
+        <!-- /CV section -->
+{% endblock %}

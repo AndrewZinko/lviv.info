@@ -1,0 +1,98 @@
+{% extends 'news/layer.html' %}
+
+{% block title %}Про нас{% endblock %}
+
+{% block bodycontent %}
+    {% load static %}
+    <div class="row">
+        <h3 class="main-header">Про нас</h3>
+
+        <section class="col-12" style="margin-bottom: 2rem;">
+            <div class="row">
+                <div class="col-md-6 center">
+                    <div>
+                        <p class="about-us-text">Сайт для зручного перегляду останніх новин, цікавинок та детальниз статей про усі закутки Львова.</p>
+                        <p class="about-us-text">Пориньте разом з нами у захоплюючий світ львівського колообігу життя та швидкого ритму існування.</p>
+                        <p class="about-us-text">Впевнені, Вам спобдобається проводити час з нами. Тож пориньмо у цей чудовий інформаційний світ!</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <img class="img-about-us" src="{% static 'news/img/Buchach_Town_Hall.jpg' %}" alt="Buchach_Town_Hall">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact section -->
+        <section class="contacts" id="contacts">
+            <h3 class="main-header">Давайте зв'яжемося</h3>
+
+            <div class="row">
+
+                <!-- Map widget -->
+                <div class="col-lg-6">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1286.515849470324!2d24.031176090192183!3d49.84186190494397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add6daf2af431%3A0xd1b86b864117cb0c!2z0JvRjNCy0ZbQstGB0YzQutCwINGA0LDRgtGD0YjQsCwg0JvRjNCy0ZbQsiwg0JvRjNCy0ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA3OTAwMA!5e0!3m2!1suk!2sua!4v1654448110628!5m2!1suk!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="google-map"></iframe>
+                </div>
+                <!-- /Map widget -->
+
+                <div class="col-lg-6">
+
+                    <!-- Contact icons -->
+                    <div class="contacts-icons row">
+                        <div class="contacts-icons-item col-md-6">
+                            <i class="fa-solid fa-envelope contacts-icon"></i>
+                            <p>andrii.zinko.knm.2020@lpnu.ua</p>
+                        </div>
+                        <div class="contacts-icons-item col-md-6" id="second-icon-contact">
+                            <i class="fa-solid fa-phone contacts-icon"></i>
+                            <p>+380673453545</p>
+                        </div>
+                    </div>
+                    <!-- /Contact icons -->
+
+                    <!-- Contact form-->
+                    <form action="{% url 'about-us' %}" method="post" class="contact-form">
+                        {% csrf_token %}
+                        <h4>Можливо маєте запитання?</h4>
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Ваше ім'я:</label>
+                                <input name="name-input" class="form-control" id="name" placeholder="Андрій">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Ваша пошта:</label>
+                                <input name="email-input" type="email" class="form-control" id="email" placeholder="email@gmail.com">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="topic" class="form-label">Про що хочете написати?</label>
+                                <input name="topic-input" class="form-control" id="topic" placeholder="Тема Вашого листа">
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="textarea" class="form-label">Ваше повідомлення</label>
+                                <textarea name="info" class="form-control" id="textarea" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="news-link contact-btn">Надіслати</button>
+                    </form>
+                    <!-- /Contact form-->
+
+                </div>
+            </div>
+        </section>
+        <!-- Contact section -->
+
+    </div>
+{% endblock %}
