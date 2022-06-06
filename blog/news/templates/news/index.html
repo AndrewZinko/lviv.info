@@ -5,13 +5,14 @@
 {% block bodycontent %}
     <div class="row">
         <h3 class="main-header">Головні новини сьогодні</h3>
-        <div class="col-lg-8 col-sm-12">
 
+        <div class="col-lg-8 col-sm-12">
+            <!-- Parsing news from DB -->
             {% for elem in news %}
             <div class="box news-box flex-direction-row">
                 <div class="row">
                     <div class="news-image col-md-4">
-                        <img src="{{ elem.image_url }}" alt="News Photo 1">
+                        <img src="{{ elem.image_url }}" alt="News Photo">
                     </div>
                     <div class="news-content col-md-8">
                         <h5 class="news-header">{{ elem.title }}</h5>
@@ -26,6 +27,7 @@
                 </div>
             </div>
             {% endfor %}
+            <!-- /Parsing news from DB -->
         </div>
 
         <div class="col-lg-4">

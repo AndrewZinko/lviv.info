@@ -3,7 +3,7 @@
 {% block title %}{{ article.article_title }}{% endblock %}
 
 {% block bodycontent %}
-
+    <!-- Styles for parsed banner from DB -->
     <style>
         .article-banner{
             width: 100%;
@@ -16,25 +16,31 @@
             align-items: center;
             background-image: url({{ article.article_img }});
         }
-
     </style>
+    <!-- /Styles for parsed banner from DB -->
 
+    <!-- Article banner with title -->
     <div class="article-banner">
         <div class="overlay-banner"></div>
         <div class="banner-content">
             <h2>{{ article.article_title }}</h2>
         </div>
     </div>
+    <!-- /Article banner with title -->
 
     <br>
 
+    <!-- Publication date -->
     <div class="container">
         <p class="publication-date">Опубліковано: {{ article.article_publication }}</p>
     </div>
+    <!-- /Publication date -->
 
     <hr>
 
+    <!-- Main content -->
     <div class="container">
         <p class="article-content">{{ article.article_content }}</p>
     </div>
+    <!-- /Main content -->
 {% endblock %}

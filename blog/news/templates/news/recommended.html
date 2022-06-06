@@ -3,70 +3,85 @@
 {% block title %}Обране редакцією{% endblock %}
 
 {% block bodycontent %}
-    <div class="row">
-        <h3 class="main-header">Наша редакція рекомендує</h3>
-        <h5 class="section-header">Варто відвідати:</h5>
-        <div class="owl-carousel owl-theme">
-            {% for elem in rest %}
-            <div class="item">
-                <div class="box-restourant restourant-advice">
-                    <a class="restourant-link" href="{{ elem.restaurant_link }}" target="_blank">
-                        <div class="restourant-item">
-                            <div class="restourant-img">
-                                <img src="{{ elem.restaurant_img }}" alt="Restourant Photo">
-                            </div>
-                            <p class="restourant-mark">
-                                <b class="mark-info">{{ elem.restaurant_mark }}</b>
-                            </p>
-                            <p class="restourant-name">
-                                {{ elem.restaurant_name }}
-                            </p>
-                            <p class="restourant-location">
-                                <i class="fa-solid fa-location-dot"></i>
-                                {{ elem.restaurant_location }}
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        <hr>
-        <h5 class="section-header">Статті редакції:</h5>
+<div class="row">
+    <h3 class="main-header">Наша редакція рекомендує</h3>
 
-        <div class="row">
-            {% for elem in article %}
-            <div class="col-md-6">
-                <div class="box">
-                    <div class="article-image">
-                        <img src="{{ elem.article_img }}" alt="Article Photo">
-                    </div>
-                    <div class="news-content">
-                        <h5 class="news-header">{{ elem.article_title }}</h5>
-                        <hr>
-                        <p class="news-text">
-                            {{ elem.article_announce }}
+    <h5 class="section-header">Варто відвідати:</h5>
+
+    <!-- Owlcarousel with restaurants recommendations -->
+    <div class="owl-carousel owl-theme">
+        <!-- Parsing blocks from DB -->
+        {% for elem in rest %}
+        <div class="item">
+            <div class="box-restourant restourant-advice">
+                <a class="restourant-link" href="{{ elem.restaurant_link }}" target="_blank">
+                    <div class="restourant-item">
+                        <div class="restourant-img">
+                            <img src="{{ elem.restaurant_img }}" alt="Restourant Photo">
+                        </div>
+                        <p class="restourant-mark">
+                            <b class="mark-info">{{ elem.restaurant_mark }}</b>
                         </p>
-                        <div class="news-link-container">
-                            <a class="news-link" href="{% url 'article' elem.id %}">Читати далі</a>
-                        </div>
+                        <p class="restourant-name">
+                            {{ elem.restaurant_name }}
+                        </p>
+                        <p class="restourant-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            {{ elem.restaurant_location }}
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+        <!-- /Parsing blocks from DB -->
+    </div>
+    <!-- /Owlcarousel with restaurants recommendations -->
+
+    <hr>
+
+    <h5 class="section-header">Статті редакції:</h5>
+
+    <!-- Articles -->
+    <div class="row">
+        <!-- Parsing blocks from DB -->
+        {% for elem in article %}
+        <div class="col-md-6">
+            <div class="box">
+                <div class="article-image">
+                    <img src="{{ elem.article_img }}" alt="Article Photo">
+                </div>
+                <div class="news-content">
+                    <h5 class="news-header">{{ elem.article_title }}</h5>
+                    <hr>
+                    <p class="news-text">
+                        {{ elem.article_announce }}
+                    </p>
+                    <div class="news-link-container">
+                        <a class="news-link" href="{% url 'article' elem.id %}">Читати далі</a>
                     </div>
                 </div>
             </div>
-            {% endfor %}
         </div>
-
-        <hr>
-
-        <h5 class="section-header">Чудові відео для перегляду:</h5>
-
-        <div class="row">
-            {% for elem in video %}
-            <div class="col-md-6 video-box">
-                <iframe class="video-resp" height="300" src="{{ elem.video_link }}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            {% endfor %}
-        </div>
-
+        {% endfor %}
+        <!-- /Parsing blocks from DB -->
     </div>
+    <!-- /Articles -->
+
+    <hr>
+
+    <h5 class="section-header">Чудові відео для перегляду:</h5>
+
+    <!-- Video section -->
+    <div class="row">
+        <!-- Parsing blocks from DB -->
+        {% for elem in video %}
+        <div class="col-md-6 video-box">
+            <iframe class="video-resp" height="300" src="{{ elem.video_link }}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        {% endfor %}
+        <!-- /Parsing blocks from DB -->
+    </div>
+    <!-- /Video section -->
+</div>
 {% endblock %}
